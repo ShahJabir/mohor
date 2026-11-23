@@ -11,7 +11,9 @@ export default defineConfig({
         return `${url}?fullscreen=true`;
       },
     }),
-    pluginReactLynx(),
+    pluginReactLynx({
+      enableCSSInheritance: true,
+    }),
     pluginTypeCheck(),
   ],
 });

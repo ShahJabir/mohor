@@ -3,6 +3,7 @@ import '@lynx-js/react/debug';
 import { root } from '@lynx-js/react';
 
 import { App } from './App.js';
+import './styles/global.css';
 
 root.render(<App />);
 

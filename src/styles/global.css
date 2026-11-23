@@ -1,0 +1,244 @@
+/* Plus Jakarta Sans. Lynx @font-face ignores font-weight, 
+so each weight is registered as its own family and picked with the .w* classes below. */
+
+@font-face {
+  font-family: 'Jakarta400';
+  src: url('../assets/fonts/PlusJakartaSans_400Regular.ttf');
+}
+@font-face {
+  font-family: 'Jakarta500';
+  src: url('../assets/fonts/PlusJakartaSans_500Medium.ttf');
+}
+@font-face {
+  font-family: 'Jakarta600';
+  src: url('../assets/fonts/PlusJakartaSans_600SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Jakarta700';
+  src: url('../assets/fonts/PlusJakartaSans_700Bold.ttf');
+}
+@font-face {
+  font-family: 'Jakarta800';
+  src: url('../assets/fonts/PlusJakartaSans_800ExtraBold.ttf');
+}
+
+/* Defaults set on the root and inherited (enableCSSInheritance), 
+so nested <text> keeps its parent's weight and color unless it sets its own. */
+
+.app-root {
+  font-family: 'Jakarta400';
+  color: #1f1f24;
+}
+
+.w4 {
+  font-family: 'Jakarta400';
+}
+.w5 {
+  font-family: 'Jakarta500';
+}
+.w6 {
+  font-family: 'Jakarta600';
+}
+.w7 {
+  font-family: 'Jakarta700';
+}
+.w8 {
+  font-family: 'Jakarta800';
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.enter-slide {
+  animation: bb-slide 0.36s cubic-bezier(0.22, 1, 0.36, 1) 0s 1 normal both;
+}
+.enter-in {
+  animation: bb-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0s 1 normal both;
+}
+.enter-fade {
+  animation: bb-fade 0.3s ease 0s 1 normal both;
+}
+
+.caret {
+  width: 2px;
+  border-radius: 1px;
+  background-color: #e2136e;
+  animation: bb-blink 1s linear 0s infinite normal none;
+}
+.spin {
+  animation: bb-spin 0.8s linear 0s infinite normal none;
+}
+
+@keyframes bb-blink {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes bb-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bb-shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(9px);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* Same as bb-shake; alternating names restarts the animation on each error. */
+
+@keyframes bb-shake2 {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(9px);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes bb-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bb-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes bb-slide {
+  0% {
+    opacity: 0.3;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes bb-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes bb-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bb-load {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 120px;
+  }
+}
+@keyframes bb-breathe {
+  0% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+}
